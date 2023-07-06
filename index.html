@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li> <a href="#" class="active">home</a></li>
+            <li> <a href="#">about</a></li>
+            <li> <a href="#">work</a></li>
+            <li> <a href="#">contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="/images/stars.png" id="stars">
+        <img src="/images/moon.png" id="moon">
+        <img src="/images/mountains_behind.png" id="mountains_behind">
+        <h2 id="text"> moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="/images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>User interface (UI) design is the process designers use to build interfaces in software or computerized devices, focusing on looks or style. <br>
+             Designers aim to create interfaces which users find easy to use and pleasurable. <br>
+            UI design refers to graphical user interfaces and other forms—e.g., 
+            voice-controlled interfaces. <br>
+            User interfaces are the access points where users interact with designs. They come in three formats: <br>
+
+            Graphical user interfaces (GUIs)—Users interact with visual representations on digital control panels. A computer’s desktop is a GUI. <br>
+            Voice-controlled interfaces (VUIs)—Users interact with these through their voices. Most smart assistants—e.g., Siri on iPhone and Alexa on Amazon devices—are VUIs. <br>
+            Gesture-based interfaces—Users engage with 3D design spaces through bodily motions: e.g., in virtual reality (VR) games.
+        
+            <br> <br>
+        
+        To design UIs best, you should consider: <br>
+        
+            Users judge designs quickly and care about usability and likeability. They don’t care about your design, but about getting their tasks done easily and with minimum effort.
+        
+               <br> Your design should therefore be “invisible”: Users shouldn’t focus on it but on completing tasks: e.g., ordering pizza on Domino’s Zero Click app.
+        
+               <br>  So, understand your users’ contexts and task flows (which you can find from, e.g., customer journey maps), to fine-tune the best, most intuitive UIs that deliver seamless experiences.
+        
+               <br>     UIs should also be enjoyable (or at least satisfying and frustration-free).
+            <br><br>
+            When your design predicts users’ needs, they can enjoy more personalized and immersive experiences. Delight them, and they’ll keep returning.
+        
+            Where appropriate, elements of gamification can make your design more fun. UIs should communicate brand values and reinforce users’ trust.  <br>
+    
+            Good design is emotional design. Users associate good feelings with brands that speak to them at all levels and keep the magic of pleasurable, seamless experiences alive.
+            <br><br>
+            <strong> Learn the basic principles of UI Design.</strong> <br>
+
+    To deliver impressive GUIs, remember—users are humans, with needs such as comfort and a limit on their mental capacities. You should follow these guidelines: <br>
+
+    Make buttons and other common elements perform predictably (including responses such as pinch-to-zoom) so users can unconsciously use them everywhere.
+     <br> should follow function. <br>
+
+    Maintain high discoverability. <br> 
+     Clearly label icons and include well-indicated affordances: e.g., shadows for buttons. <br>
+
+    Keep interfaces simple (with only elements that help serve users’ purposes) and create an “invisible” feel. <br>
+
+    Respect the user’s eye and attention regarding layout. Focus on hierarchy and readability: <br>
+
+        Use proper alignment. Typically choose edge (over center) alignment. <br>
+
+        Draw attention to key features using: <br>
+
+            Color, brightness and contrast. Avoid including colors or buttons excessively. <br>
+
+            Text via font sizes, bold type/weighting, italics, capitals and distance between letters. Users should pick up meanings just by scanning. <br>
+
+    Minimize the number of actions for performing tasks but focus on one chief function per page. <br>
+     Guide users by indicating preferred actions. Ease complex tasks by using progressive disclosure. <br>
+
+    Put controls near objects that users want to control. For example, a button to submit a form should be near the form. <br>
+
+    Keep users informed regarding system responses/actions with feedback. <br>
+
+    Use appropriate UI design patterns to help guide users and reduce burdens (e.g., pre-fill forms). <br>
+     Beware of using dark patterns, which include hard-to-see prefilled opt-in/opt-out checkboxes and sneaking items into users’ carts. <br>
+
+    Maintain brand consistency.  Always provide next steps which users can deduce naturally, whatever their context.
+        </p>
+    </div>
+
+    <script>
+        let stars =  document.getElementById("stars");
+        let moon =  document.getElementById("moon");
+        let mountains_behind =  document.getElementById("mountains_behind");
+        let mountains_front =  document.getElementById("mountains_front");
+        let text =  document.getElementById("text");
+        let btn =  document.getElementById("btn");
+        let header = document.querySelector("header");
+
+        window.addEventListener('scroll', function()
+        {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            
+            header.style.top = value * 0.5 +  'px'
+        })
+   </script>
+</body>
+</html>
